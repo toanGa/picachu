@@ -1,0 +1,15 @@
+C:\Users\Toan\source\repos\Duong\Duong\obj\Debug\Duong.csprojResolveAssemblyReference.cache
+C:\Users\Toan\source\repos\Duong\Duong\obj\Debug\MainWindow.g.cs
+C:\Users\Toan\source\repos\Duong\Duong\obj\Debug\App.g.cs
+C:\Users\Toan\source\repos\Duong\Duong\obj\Debug\Duong_MarkupCompile.cache
+C:\Users\Toan\source\repos\Duong\Duong\obj\Debug\Duong_MarkupCompile.lref
+C:\Users\Toan\source\repos\Duong\Duong\bin\Debug\Duong.exe.config
+C:\Users\Toan\source\repos\Duong\Duong\bin\Debug\Duong.exe
+C:\Users\Toan\source\repos\Duong\Duong\bin\Debug\Duong.pdb
+C:\Users\Toan\source\repos\Duong\Duong\obj\Debug\MainWindow.baml
+C:\Users\Toan\source\repos\Duong\Duong\obj\Debug\Duong.g.resources
+C:\Users\Toan\source\repos\Duong\Duong\obj\Debug\Duong.Properties.Resources.resources
+C:\Users\Toan\source\repos\Duong\Duong\obj\Debug\Duong.csproj.GenerateResource.Cache
+C:\Users\Toan\source\repos\Duong\Duong\obj\Debug\Duong.csproj.CoreCompileInputs.cache
+C:\Users\Toan\source\repos\Duong\Duong\obj\Debug\Duong.exe
+C:\Users\Toan\source\repos\Duong\Duong\obj\Debug\Duong.pdb

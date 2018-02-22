@@ -1,0 +1,311 @@
+﻿<Window x:Class="Duong.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Duong"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="1*" />
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid Name="MainGrid" Grid.Column="0" Grid.Row="0" Margin="10" >
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- start define gui object for row 0 -->
+            <Label Name="lable00" Grid.Row="0" Grid.Column="0" PreviewMouseDown="lable00_PreviewMouseDown">
+                
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p1.jpg" />
+                </Label.Background>
+             
+            </Label>
+            <Label Name="lable01" Grid.Row="0" Grid.Column="1" PreviewMouseDown="lable01_PreviewMouseDown">
+
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p2.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable02" Grid.Row="0" Grid.Column="2" PreviewMouseDown="lable02_PreviewMouseDown">
+                
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p3.jpg" />
+                </Label.Background>
+            </Label>
+            <Label Name="lable03" Grid.Row="0" Grid.Column="3" PreviewMouseDown="lable03_PreviewMouseDown">
+                
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p4.jpg"/>
+                </Label.Background>
+            </Label>
+
+            <Label Name="lable04" Grid.Row="0" Grid.Column="4" PreviewMouseDown="lable04_PreviewMouseDown">
+                
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p5.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable05" Grid.Row="0" Grid.Column="5" PreviewMouseDown="lable05_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p6.jpg" />
+                </Label.Background>
+            </Label>
+            <Label Name="lable06" Grid.Row="0" Grid.Column="6" PreviewMouseDown="lable06_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p12.jpg" />
+                </Label.Background>
+            </Label>
+            <Label Name="lable07" Grid.Row="0" Grid.Column="7" PreviewMouseDown="lable07_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p23.jpg" />
+                </Label.Background>
+            </Label>
+            <!-- end define gui object for row 0 -->
+
+            <!-- start define gui object for row 1 -->
+            <Label Name="lable10"  Grid.Row="1" Grid.Column="0" PreviewMouseDown="lable10_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p1.jpg" />
+                </Label.Background>
+            </Label>
+            <Label Name="lable11" Grid.Row="1" Grid.Column="1" PreviewMouseDown="lable11_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p15.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable12" Grid.Row="1" Grid.Column="2" PreviewMouseDown="lable12_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p8.jpg" />
+                </Label.Background>
+            </Label>
+            <Label Name="lable13" Grid.Row="1" Grid.Column="3" PreviewMouseDown="lable13_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p21.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable14" Grid.Row="1" Grid.Column="4" PreviewMouseDown="lable14_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p6.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable15" Grid.Row="1" Grid.Column="5" PreviewMouseDown="lable15_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p15.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable16" Grid.Row="1" Grid.Column="6" PreviewMouseDown="lable16_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p25.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable17" Grid.Row="1" Grid.Column="7" PreviewMouseDown="lable17_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p13.jpg"/>
+                </Label.Background>
+            </Label>
+            <!-- start define gui object for row 1 -->
+
+
+            <!-- start define gui object for row 2 -->
+            <Label Name="lable20"  Grid.Row="2" Grid.Column="0" PreviewMouseDown="lable20_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p11.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable21" Grid.Row="2" Grid.Column="1" PreviewMouseDown="lable21_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p10.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable22" Grid.Row="2" Grid.Column="2" PreviewMouseDown="lable22_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p19.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable23" Grid.Row="2" Grid.Column="3" PreviewMouseDown="lable23_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p18.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable24" Grid.Row="2" Grid.Column="4" PreviewMouseDown="lable24_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p20.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable25" Grid.Row="2" Grid.Column="5" PreviewMouseDown="lable25_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p17.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable26" Grid.Row="2" Grid.Column="6" PreviewMouseDown="lable26_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p25.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable27" Grid.Row="2" Grid.Column="7" PreviewMouseDown="lable27_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p12.jpg"/>
+                </Label.Background>
+            </Label>
+            <!-- start define gui object for row 2 -->
+
+            <!-- start define gui object for row 3 -->
+            <Label Name="lable30"  Grid.Row="3" Grid.Column="0" PreviewMouseDown="lable30_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p11.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable31" Grid.Row="3" Grid.Column="1" PreviewMouseDown="lable31_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p10.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable32" Grid.Row="3" Grid.Column="2" PreviewMouseDown="lable32_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p8.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable33" Grid.Row="3" Grid.Column="3" PreviewMouseDown="lable33_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p18.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable34" Grid.Row="3" Grid.Column="4" PreviewMouseDown="lable34_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p24.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable35" Grid.Row="3" Grid.Column="5" PreviewMouseDown="lable35_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p17.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable36" Grid.Row="3" Grid.Column="6" PreviewMouseDown="lable36_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p13.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable37" Grid.Row="3" Grid.Column="7" PreviewMouseDown="lable37_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p1.jpg"/>
+                </Label.Background>
+            </Label>
+            <!-- start define gui object for row 3 -->
+
+
+            <!-- start define gui object for row 4 -->
+            <Label Name="lable40"  Grid.Row="4" Grid.Column="0" PreviewMouseDown="lable40_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p12.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable41" Grid.Row="4" Grid.Column="1" PreviewMouseDown="lable41_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p2.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable42" Grid.Row="4" Grid.Column="2" PreviewMouseDown="lable42_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p5.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable43" Grid.Row="4" Grid.Column="3" PreviewMouseDown="lable43_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p6.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable44" Grid.Row="4" Grid.Column="4" PreviewMouseDown="lable44_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p21.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable45" Grid.Row="4" Grid.Column="5" PreviewMouseDown="lable45_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p12.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable46" Grid.Row="4" Grid.Column="6" PreviewMouseDown="lable46_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p19.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable47" Grid.Row="4" Grid.Column="7" PreviewMouseDown="lable47_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p10.jpg"/>
+                </Label.Background>
+            </Label>
+            <!-- start define gui object for row 4 -->
+
+            <!-- start define gui object for row 5 -->
+            <Label Name="lable50"  Grid.Row="5" Grid.Column="0" PreviewMouseDown="lable50_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p12.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable51" Grid.Row="5" Grid.Column="1" PreviewMouseDown="lable51_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p11.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable52" Grid.Row="5" Grid.Column="2" PreviewMouseDown="lable52_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p17.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable53" Grid.Row="5" Grid.Column="3" PreviewMouseDown="lable53_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p19.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable54" Grid.Row="5" Grid.Column="4" PreviewMouseDown="lable54_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p21.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable55" Grid.Row="5" Grid.Column="5" PreviewMouseDown="lable55_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p21.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable56" Grid.Row="5" Grid.Column="6" PreviewMouseDown="lable56_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p18.jpg"/>
+                </Label.Background>
+            </Label>
+            <Label Name="lable57" Grid.Row="5" Grid.Column="7" PreviewMouseDown="lable57_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/p19.jpg" />
+                </Label.Background>
+            </Label>
+            <!-- start define gui object for row 5 -->
+            
+            
+
+        </Grid>
+    </Grid>
+</Window>
