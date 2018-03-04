@@ -24,8 +24,12 @@ namespace Duong
     {
         List<NodeInfo> node;
         LevelInfo levelInfo;
+        private Label labelInfo;
+        private const string MASTER_PATH = "E:\\Tester\\picachu\\picachu\\Duong\\image\\";
+        private const double OPA_CHOOSED = 0.5;
+        private const double OPA_UNCHOOSED = 1;
 
-        private const string pic1 = "image/p1.jpg";
+        private const string pic1 = "p1.jpg";
         private const string pic2 = "p2.jpg";
         private const string pic3 = "p3.jpg";
         private const string pic4 = "p4.jpg";
@@ -56,16 +60,29 @@ namespace Duong
             levelInfo = LevelHelper.getLevelInfo(0);
             //((Label)FindName("lable00")).
             InitNode();
+            setNodeStartLevel();
 
+            object item = MainGrid.FindName("lableInfo");
+            if(item is Label)
+            {
+                labelInfo = (Label)item;
+            }
+#if false
             object item = MainGrid.FindName("lable00");
+
             if(item is Label)
             {
                 MessageBox.Show("find success!!");
                 Label lbl = (Label)item;
-                lbl.Background = new ImageBrush(new BitmapImage(new Uri(Directory.GetFiles(pic2))));
-               
+                lbl.Background = new ImageBrush(new BitmapImage(new Uri(MASTER_PATH + pic15)));
+                lbl.Background = null;
                 lbl.Opacity = 0.3;
             }
+#endif
+            string testDir = Directory.GetCurrentDirectory();
+            string[] test2 = Directory.GetDirectories("E:\\Tester\\picachu\\picachu\\Duong\\image\\");
+
+
         }
 
         public void InitNode()
@@ -114,6 +131,8 @@ namespace Duong
                     node[index].isChoosing = false;
                 }
             }
+
+            refreshNodeState();
         }
 
 
@@ -127,7 +146,7 @@ namespace Duong
             int colStart = levelInfo.colStart;
             int numsRow = levelInfo.numsRow;
             int numsCol = levelInfo.numsCol;
-            NodeInfo nodeCheck = new NodeInfo(0, 0);
+            NodeInfo nodeCheck = new NodeInfo(0, 0);// use for check node
             int index;
             for (int i = rowStart; i < rowStart + numsRow; ++i )
             {
@@ -144,21 +163,72 @@ namespace Duong
             return false;
         }
 
-        private void lable00_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+ 
+
+        private void label_ClickEvent(NodeInfo clickedNode)
         {
-            Console.WriteLine("label 00");
-            if(sender is Label)
+            if(clickedNode.isReadyToClick)
             {
-                Console.WriteLine("label name:" + ((Label)sender).Name);
+                if(isExistedNodeClicked())// start compare
+                {
+                    if (clickedNode.isChoosing)// if is choosing, remove
+                    {
+                        clickedNode.lable.Opacity = OPA_CHOOSED;
+                    }
+                    else
+                    {
+                        // process match event
+                    }
+                    clickedNode.isChoosing = !clickedNode.isChoosing;
+
+                }
+                else
+                {
+                    clickedNode.lable.Opacity = OPA_CHOOSED;
+                }
+                
             }
         }
 
-        private void lable02_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        private void refreshNodeState()
+        {
+            int total = node.Count;
+            for(int i = 0; i < total; ++i)
+            {
+                if(!node[i].isReadyToClick)
+                {
+                    node[i].lable.Background = null;
+                }
+                if(node[i].isReadyToClick)
+                {
+                    if(node[i].isChoosing)
+                    {
+                        node[i].lable.Opacity = OPA_CHOOSED;
+                    }else
+                    {
+                        node[i].lable.Opacity = OPA_UNCHOOSED;
+                    }
+                }
+            }
+            
+        }
+        private void lable00_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Console.WriteLine("label 00");
+            if (sender is Label)
+            {
+                Console.WriteLine("label name:" + ((Label)sender).Name);
+            }
+
+            label_ClickEvent(node[0]);
+        }
+
+
+        private void lable01_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
 
         }
-
-        private void lable01_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        private void lable02_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
 
         }
@@ -384,6 +454,11 @@ namespace Duong
         }
 
         private void lable57_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void lableInfo_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
 
         }

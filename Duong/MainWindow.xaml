@@ -16,6 +16,12 @@
             <ColumnDefinition Width="3*" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
+        <Grid Name="infoGrid" Grid.Column="0" Grid.Row="1">
+            <Label Name="lableInfo" PreviewMouseDown="lableInfo_PreviewMouseDown">
+            </Label>
+        </Grid>
+           
+            
         <Grid Name="MainGrid" Grid.Column="0" Grid.Row="0" Margin="10" >
             
             <Grid.RowDefinitions>
