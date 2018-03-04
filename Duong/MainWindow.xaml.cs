@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Duong.GameLevelHelper;
+using System.IO;
 
 namespace Duong
 {
@@ -21,9 +23,37 @@ namespace Duong
     public partial class MainWindow : Window
     {
         List<NodeInfo> node;
+        LevelInfo levelInfo;
+
+        private const string pic1 = "image/p1.jpg";
+        private const string pic2 = "p2.jpg";
+        private const string pic3 = "p3.jpg";
+        private const string pic4 = "p4.jpg";
+        private const string pic5 = "p5.jpg";
+        private const string pic6 = "p6.jpg";
+        private const string pic7 = "p7.jpg";
+        private const string pic8 = "p8.jpg";
+        private const string pic9 = "p9.jpg";
+        private const string pic10 = "p10.jpg";
+        private const string pic11 = "p11.jpg";
+        private const string pic12 = "p12.jpg";
+        private const string pic13 = "p13.jpg";
+        private const string pic14 = "p14.jpg";
+        private const string pic15 = "p15.jpg";
+        private const string pic16 = "p16.jpg";
+        private const string pic17 = "p17.jpg";
+        private const string pic18 = "p18.jpg";
+        private const string pic19 = "p19.jpg";
+        private const string pic20 = "p20.jpg";
+        private const string pic21 = "p21.jpg";
+        private const string pic22 = "p22.jpg";
+        private const string pic23 = "p23.jpg";
+        private const string pic24 = "p24.jpg";
+        private const string pic25 = "p25.jpg";
         public MainWindow()
         {
             InitializeComponent();
+            levelInfo = LevelHelper.getLevelInfo(0);
             //((Label)FindName("lable00")).
             InitNode();
 
@@ -32,6 +62,8 @@ namespace Duong
             {
                 MessageBox.Show("find success!!");
                 Label lbl = (Label)item;
+                lbl.Background = new ImageBrush(new BitmapImage(new Uri(Directory.GetFiles(pic2))));
+               
                 lbl.Opacity = 0.3;
             }
         }
@@ -63,10 +95,62 @@ namespace Duong
             }
         }
 
+        /// <summary>
+        /// enable node when startup
+        /// </summary>
+        private void setNodeStartLevel()
+        {
+            int rowStart = levelInfo.rowStart;
+            int colStart = levelInfo.colStart;
+            int numsRow = levelInfo.numsRow;
+            int numsCol = levelInfo.numsCol;
+            int index;
+            for (int i = rowStart; i < rowStart + numsRow; ++i)
+            {
+                for (int j = colStart; j < colStart + numsCol; ++j)
+                {
+                    index = i * numsRow + j;
+                    node[index].isReadyToClick = true;
+                    node[index].isChoosing = false;
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// check all node info has clicked
+        /// </summary>
+        /// <returns></returns>
+        private bool isExistedNodeClicked()
+        {
+            int rowStart = levelInfo.rowStart;
+            int colStart = levelInfo.colStart;
+            int numsRow = levelInfo.numsRow;
+            int numsCol = levelInfo.numsCol;
+            NodeInfo nodeCheck = new NodeInfo(0, 0);
+            int index;
+            for (int i = rowStart; i < rowStart + numsRow; ++i )
+            {
+                for(int j = colStart; j < colStart + numsCol; ++j)
+                {
+                    index = i * numsRow + j;
+                    nodeCheck = node[index];
+                    if(nodeCheck.isReadyToClick && nodeCheck.isChoosing)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
         private void lable00_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
             Console.WriteLine("label 00");
-            
+            if(sender is Label)
+            {
+                Console.WriteLine("label name:" + ((Label)sender).Name);
+            }
         }
 
         private void lable02_PreviewMouseDown(object sender, MouseButtonEventArgs e)

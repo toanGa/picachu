@@ -11,8 +11,8 @@ namespace Duong
     {
         int rowIndex = 0;
         int colIndex = 0;
-        bool isReadyToClick = false;
-        bool isChoosing = false;
+        public bool isReadyToClick = false;
+        public bool isChoosing = false;
 
         public Label lable;
         /// <summary>
