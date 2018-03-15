@@ -15,6 +15,7 @@ namespace Duong.GameLevelHelper
         public int numsCol;
         public int rowStart;
         public int colStart;
+
         public LevelInfo(int numsRow, int numsCol, int rowStart, int colStart)
         {
             this.numsRow = numsRow;
@@ -38,13 +39,13 @@ namespace Duong.GameLevelHelper
             switch(level)
             {
                 case 0:   
-                    info = new LevelInfo(4, 2, 2, 2);
+                    info = new LevelInfo(2, 4, 2, 2);
                     break;
                 case 1:
-                    info = new LevelInfo(6, 4, 1, 1);
+                    info = new LevelInfo(4, 6, 1, 1);
                     break;
                 case 2:
-                    info = new LevelInfo(8, 6, 0, 0);
+                    info = new LevelInfo(6, 8, 0, 0);
                     break;
                 default:
                     break;
