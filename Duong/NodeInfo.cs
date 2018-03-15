@@ -13,7 +13,7 @@ namespace Duong
         int colIndex = 0;
         public bool isReadyToClick = false;
         public bool isChoosing = false;
-
+        public string picName;
         public Label lable;
         /// <summary>
         /// set default contructor
