@@ -31,11 +31,13 @@ namespace Duong.GameLevelHelper
     class LevelHelper
     {
         static LevelInfo info;
+        static int gameLevel;
         /*
          *  start with 0
          */
         static public LevelInfo getLevelInfo(int level)
         {
+            gameLevel = level;
             switch(level)
             {
                 case 0:   
@@ -51,6 +53,24 @@ namespace Duong.GameLevelHelper
                     break;
             }
             return info;
+        }
+
+        static public LevelInfo getNextLevel()
+        {
+            gameLevel++;
+            return getLevelInfo(gameLevel);
+        }
+        /// <summary>
+        /// check win
+        /// </summary>
+        /// <returns></returns>
+        static public bool checkWinGame()
+        {
+            if(gameLevel == 2)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

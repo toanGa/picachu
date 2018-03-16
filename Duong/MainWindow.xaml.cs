@@ -25,7 +25,9 @@ namespace Duong
         List<NodeInfo> node;
         LevelInfo levelInfo;
         private Label labelInfo;
-        private const string MASTER_PATH = "E:\\Tester\\picachu\\picachu\\Duong\\image\\";
+        Random random;
+        //C:\Users\Toan\source\repos\Duong\Duong\image
+        private const string MASTER_PATH = "C:\\Users\\Toan\\source\\repos\\Duong\\Duong\\image\\";
         private const double OPA_CHOOSED = 0.5;
         private const double OPA_UNCHOOSED = 1;
         private const int MAX_COL = 8;
@@ -62,11 +64,12 @@ namespace Duong
         {
             InitializeComponent();
             levelInfo = LevelHelper.getLevelInfo(0);
-            //((Label)FindName("lable00")).
+            random = new Random();
+            // start init game info
             InitNode();
             setNodeStartLevel();
-
             refreshNodeState();
+            // end of start game info
 
             object item = MainGrid.FindName("lableInfo");
             if(item is Label)
@@ -201,7 +204,8 @@ namespace Duong
                         // process match event
                         // if same label -> delete node
                         // else wrong click -> unchoose
-                        int indexClicking = getIndexNodeClickPrev();
+                        int indexClickOld = getIndexNodeClickPrev();
+                        procTwoNodeClick(indexClickOld, indexNode);
                     }
                    
 
@@ -221,11 +225,16 @@ namespace Duong
         private void refreshNodeState()
         {
             int total = node.Count;
+            bool isExisNodeAlive = false;
             for(int i = 0; i < total; ++i)
             {
                 if(!node[i].isReadyToClick)
                 {
                     node[i].lable.Background = null;
+                }
+                else
+                {
+                    isExisNodeAlive = true;
                 }
                 if(node[i].isReadyToClick)
                 {
@@ -236,6 +245,17 @@ namespace Duong
                     {
                         node[i].lable.Opacity = OPA_UNCHOOSED;
                     }
+                }
+            }
+            if(!isExisNodeAlive)
+            {
+                if(LevelHelper.checkWinGame())
+                {
+                    MessageBox.Show("Congulation!");
+                }
+                else
+                {
+                    this.playNextLevel();
                 }
             }
             
@@ -295,7 +315,7 @@ namespace Duong
         /// <returns></returns>
         string getRandomPicName()
         {
-            int indexPic = (new Random()).Next(1, 26);// 1 to 25
+            int indexPic = random.Next(1, 26);// 1 to 25
             return "p" + indexPic + ".jpg";
         }
 
@@ -325,6 +345,42 @@ namespace Duong
             }
             return -1;
         }
+
+        private void procTwoNodeClick(int nodeIndex1, int nodeIndex2)
+        {
+            if(nodeIndex1 == nodeIndex2)
+            {
+                return;
+            }
+            if(node[nodeIndex1].picName == node[nodeIndex2].picName)
+            {
+                // hide or change game level
+                node[nodeIndex1].isReadyToClick = false;
+                //node[nodeIndex1].lable = null;
+                node[nodeIndex2].isReadyToClick = false;
+                //node[nodeIndex1].lable = null;
+            }
+            else
+            {
+                //turn on two node
+                node[nodeIndex1].isChoosing = false;
+                node[nodeIndex1].lable.Opacity = OPA_UNCHOOSED;
+                node[nodeIndex2].isChoosing = false;
+                node[nodeIndex1].lable.Opacity = OPA_UNCHOOSED;
+            }
+        }
+        /// <summary>
+        /// init value for play next level
+        /// </summary>
+        private void playNextLevel()
+        {
+            levelInfo = LevelHelper.getNextLevel();
+            InitNode();
+            setNodeStartLevel();
+            refreshNodeState();
+        }
+
+
         private void lable00_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
             Console.WriteLine("label 00");
