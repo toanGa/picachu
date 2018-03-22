@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Duong.GameLevelHelper;
 using System.IO;
-
+using System.Windows.Threading;
 namespace Duong
 {
     /// <summary>
@@ -26,6 +26,12 @@ namespace Duong
         LevelInfo levelInfo;
         private Label labelInfo;
         Random random;
+        DispatcherTimer dispatcherTimer;
+        bool isGameContinue;
+        FAIL failNotiyer;
+        WIN winNotifier;
+        // time count
+        int timeGame;
         //C:\Users\Toan\source\repos\Duong\Duong\image
         private const string MASTER_PATH = "C:\\Users\\Toan\\source\\repos\\Duong\\Duong\\image\\";
         private const double OPA_CHOOSED = 0.5;
@@ -65,6 +71,13 @@ namespace Duong
             InitializeComponent();
             levelInfo = LevelHelper.getLevelInfo(0);
             random = new Random();
+            dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
+            isGameContinue = true;
+            failNotiyer = new FAIL(LevelHelper.gameLevel);
+
+            dispatcherTimer.Start();
             // start init game info
             InitNode();
             setNodeStartLevel();
@@ -127,6 +140,10 @@ namespace Duong
             }
 
             initNamePic();
+            if(!dispatcherTimer.IsEnabled)
+            {
+                dispatcherTimer.Start();
+            }           
         }
 
         /// <summary>
@@ -138,6 +155,7 @@ namespace Duong
             int colStart = levelInfo.colStart;
             int numsRow = levelInfo.numsRow;
             int numsCol = levelInfo.numsCol;
+            this.timeGame = 0;
             int index;
             for (int i = rowStart; i < rowStart + numsRow; ++i)
             {
@@ -188,6 +206,10 @@ namespace Duong
         /// <param name="indexNode"></param>
         private void label_ClickEvent(int indexNode)
         {
+            if(!isGameContinue)
+            {
+                return;
+            }
             //labelInfo.Content = "clicked node: " + clickedNode.
             //string brushText = node[indexNode].lable.;
             if (node[indexNode].isReadyToClick)
@@ -635,6 +657,45 @@ namespace Duong
         private void lableInfo_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
             
+        }
+
+
+
+        /// <summary>
+        /// Timer to count
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            // Updating the Label which displays the current second
+            ++timeGame;
+            labelInfo.Content = "Level: " + LevelHelper.gameLevel + "\n";
+            labelInfo.Content += "time: " + timeGame + "/" + levelInfo.MAX_TIME;
+            if (timeGame > levelInfo.MAX_TIME)
+            {
+                // show game exit
+                gameExist();
+                showFail();                
+                return;
+            }
+        }
+
+        void showFail()
+        {           
+            failNotiyer.Show();
+        }
+
+        /// <summary>
+        /// exist game
+        /// </summary>
+        void gameExist()
+        {
+            isGameContinue = false;
+            if (dispatcherTimer.IsEnabled)
+            {
+                dispatcherTimer.Stop();
+            }
         }
     }
 }

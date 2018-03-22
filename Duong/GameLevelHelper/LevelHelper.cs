@@ -9,13 +9,13 @@ namespace Duong.GameLevelHelper
     /// <summary>
     /// infomation of level is playing
     /// </summary>
-    struct LevelInfo
+    class LevelInfo
     {
         public int numsRow;
         public int numsCol;
         public int rowStart;
         public int colStart;
-
+        public int MAX_TIME;
         public LevelInfo(int numsRow, int numsCol, int rowStart, int colStart)
         {
             this.numsRow = numsRow;
@@ -31,7 +31,7 @@ namespace Duong.GameLevelHelper
     class LevelHelper
     {
         static LevelInfo info;
-        static int gameLevel;
+        public static int gameLevel;
         /*
          *  start with 0
          */
@@ -42,12 +42,15 @@ namespace Duong.GameLevelHelper
             {
                 case 0:   
                     info = new LevelInfo(2, 4, 2, 2);
+                    info.MAX_TIME = 10;
                     break;
                 case 1:
                     info = new LevelInfo(4, 6, 1, 1);
+                    info.MAX_TIME = 20;
                     break;
                 case 2:
                     info = new LevelInfo(6, 8, 0, 0);
+                    info.MAX_TIME = 30;
                     break;
                 default:
                     break;

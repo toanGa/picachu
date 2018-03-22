@@ -8,30 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/p1.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/p10.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/p11.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/p12.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/p13.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/p14.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/p15.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/p16.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/p17.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/p18.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/p19.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/p2.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/p20.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/p21.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/p22.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/p23.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/p24.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/p25.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/p3.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/p4.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/p5.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/p6.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/p7.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/p8.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/p9.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/exit_game.png")]
 
 

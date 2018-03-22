@@ -1,0 +1,46 @@
+﻿<Window x:Class="Duong.FAIL"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Duong"
+        mc:Ignorable="d"
+        Title="Game Fail" Height="300" Width="300"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="1*" />
+
+        </Grid.RowDefinitions>
+
+        <Grid Name="FailGrid" Grid.Column="0" Grid.Row="0" Margin="10" >
+            <Label Grid.Row="0" Grid.Column="0">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/game_over.png"/>
+                </Label.Background>
+            </Label>
+        </Grid>
+
+        <Grid Name="ButtomGrid" Grid.Column="0" Grid.Row="1" Margin="10" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+
+
+            <Label Name="Replay" Grid.Row="0" Grid.Column="0" PreviewMouseDown="Replay_PreviewMouseDown">
+                <Label.Background>
+                    <ImageBrush ImageSource="image/replay.jpg"/>
+                </Label.Background>
+            </Label>
+
+            <Label Name="Exit" Grid.Row="0" Grid.Column="1" PreviewMouseDown="Exit_PreviewMouseDown" >
+                <Label.Background >
+                    <ImageBrush ImageSource="image/exit_game.png"/>
+                </Label.Background>
+            </Label>
+        </Grid>
+    </Grid>
+</Window>

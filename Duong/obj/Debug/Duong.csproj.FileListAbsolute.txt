@@ -28,3 +28,7 @@ E:\Tester\picachu\picachu\Duong\obj\Debug\Duong.csproj.GenerateResource.Cache
 E:\Tester\picachu\picachu\Duong\obj\Debug\Duong.csproj.CoreCompileInputs.cache
 E:\Tester\picachu\picachu\Duong\obj\Debug\Duong.exe
 E:\Tester\picachu\picachu\Duong\obj\Debug\Duong.pdb
+C:\Users\Toan\source\repos\Duong\Duong\obj\Debug\FAIL.g.cs
+C:\Users\Toan\source\repos\Duong\Duong\obj\Debug\WIN.g.cs
+C:\Users\Toan\source\repos\Duong\Duong\obj\Debug\FAIL.baml
+C:\Users\Toan\source\repos\Duong\Duong\obj\Debug\WIN.baml
