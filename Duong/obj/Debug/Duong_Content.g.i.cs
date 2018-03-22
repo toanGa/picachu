@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/exit_game.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("duong.ico")]
 
 
